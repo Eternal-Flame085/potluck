@@ -9,13 +9,7 @@ class Potluck
     @dishes << dish
   end
 
-  def get_all_from_category(cat)
-    returning_array = []
-    counter = 0
-    @dishes.length.times do
-      returning_array << @dishes[counter] if @dishes[counter].category == cat
-      counter += 1
-    end
-    return returning_array
+  def get_all_from_category(category)
+    @dishes.find_all {|dish| dish.category == category}
   end
 end
